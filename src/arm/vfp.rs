@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 #![cfg(target_arch = "arm")]
-#![cfg(target_feature = "vfp2")]
+//#![cfg(any(target_feature = "vfp2", target_feature = "vfp3"))]
 
 use core::arch::asm;
 
