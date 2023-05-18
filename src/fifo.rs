@@ -9,7 +9,7 @@ pub struct Fifo {
 
 impl Fifo {
     pub fn reset(&mut self, size: isize) {
-        let buf_size = (size - 4*3) as u32;
+        let buf_size = (size - 4 * 3) as u32;
         unsafe {
             ptr::write_volatile(&mut self.buf_size, 0);
             ptr::write_volatile(&mut self.tx_ptr, 0);
@@ -17,7 +17,7 @@ impl Fifo {
             ptr::write_volatile(&mut self.buf_size, buf_size);
         }
     }
-    
+
     pub fn send_char(&mut self, c: u8) -> bool {
         unsafe {
             let rx_ptr = ptr::read_volatile(&self.rx_ptr);
@@ -59,14 +59,13 @@ impl Fifo {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn fifo_test() {
-        let mut mem :  [u8; 256] = [0; 256];
+        let mut mem: [u8; 256] = [0; 256];
         let ptr = &mut mem as *mut u8;
         unsafe {
             let fifo = &mut *(ptr as *mut Fifo);

@@ -37,7 +37,7 @@ bitflags! {
 
 impl ClockControl {
     pub fn clear(&mut self) {
-        self.bits = 0;
+        *self.0.bits_mut() = 0;
     }
 }
 
@@ -56,7 +56,7 @@ bitflags! {
 
 impl CounterControl {
     pub fn clear(&mut self) {
-        self.bits = 0;
+        *self.0.bits_mut() = 0;
     }
 }
 
@@ -74,7 +74,7 @@ bitflags! {
 
 impl Interrupt {
     pub fn clear(&mut self) {
-        self.bits = 0;
+        *self.0.bits_mut() = 0;
     }
 }
 
@@ -90,7 +90,7 @@ bitflags! {
 
 impl EventTimerControl {
     pub fn clear(&mut self) {
-        self.bits = 0;
+        *self.0.bits_mut() = 0;
     }
 }
 

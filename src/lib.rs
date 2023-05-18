@@ -1,7 +1,6 @@
 #![no_std]
 #![allow(stable_features)]
-#![feature(asm)]
-
+//#![feature(asm)]
 
 // メーカー別に分類予定
 
