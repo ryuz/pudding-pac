@@ -2,7 +2,6 @@
 #![allow(stable_features)]
 //#![feature(asm)]
 
-
 // メーカー別に分類予定
 
 pub mod arm;
